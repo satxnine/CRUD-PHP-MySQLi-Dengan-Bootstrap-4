@@ -4,7 +4,7 @@
   
   $id = $_GET['id'];
   
-  $query = "SELECT * FROM tbl_siswa WHERE id_siswa = $id LIMIT 1";
+  $query = "SELECT * FROM tbl_siswa2 WHERE id_siswa = $id LIMIT 1";
 
   $result = mysqli_query($connection, $query);
 
@@ -25,10 +25,19 @@
 
     <div class="container" style="margin-top: 80px">
       <div class="row">
+
         <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-header">
               EDIT SISWA
+
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="index.php">Data Tabel</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+              </nav>
             </div>
             <div class="card-body">
               <form action="update-siswa.php" method="POST">

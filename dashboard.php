@@ -1,22 +1,30 @@
+<?php
+
+  session_start();
+
+  if(!$_SESSION['id_user']){
+    header("location: login.php");
+  }
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <title>Data Siswa</title>
-  </head>
 
+    <title>Dashboard</title>
+  </head>
   <body>
 
-    <div class="container" style="margin-top: 80px">
+    <div class="container" style="margin-top: 50px">
       <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              DATA SISWA
-
+        
+          <div class="col-md-3">
+            <ul class="list-group">
+              <li class="list-group-item active">MAIN MENU</li>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
@@ -24,8 +32,21 @@
                   <li class="breadcrumb-item active" aria-current="page">Data</li>
                 </ol>
               </nav>
+              <a href="dashboard.php" class="list-group-item" style="color: #212529;">Dashboard</a>
+              <a href="tambah-siswa.php" class="list-group-item" style="color: #212529;">Tambah Data Siswa</a>
+              <a href="logout.php" class="list-group-item" style="color: #212529;">Logout</a>
+            </ul>
+          </div>
 
-            </div>
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-body">
+                <label>DATA SISWA</label>
+                <hr>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
             <div class="card-body">
               <a href="tambah-siswa.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
               <table class="table table-bordered" id="myTable">
@@ -73,5 +94,14 @@
           $('#myTable').DataTable();
       } );
     </script>
-  </body>
+
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+</body>
 </html>
