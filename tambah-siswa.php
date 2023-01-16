@@ -26,7 +26,7 @@
             </nav>
 
             <div class="card-body">
-              <form method="POST">
+              <form action="s" method="POST">
                 
                 <div class="form-group">
                   <label>NISN</label>
